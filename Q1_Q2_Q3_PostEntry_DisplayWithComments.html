@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Classified Form</title>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script src='firebase.js'></script>
+    <script src='validations.js'></script>
+    <script src='main.js'></script>
+    <script src="tabs.js"></script>
+    <link rel="stylesheet" href="tabs.css">
+
+</head>
+
+<body>
+
+    <div id="tabs">
+        <button type="button" class="button1" id="viewTab" onclick="clickViewTab(this.id)">View Post</button>
+        <button type="button" class="button1" id="addTab" onclick="displaytabs(this.id)">Add Post</button>
+    </div>
+    <div id="boxes">
+            
+        <div id="view">
+            <br>
+            
+
+
+        </div>
+        
+        <div id="post">
+
+            <!-- onsubmit="addPost();return false;" -->
+             <form>
+                    <br>
+                <label for='postDate'>Date : </label>
+                <span id='postDate'></span>
+                <input type="hidden" name="date" id='dateHidden'>
+
+                <br>
+                <br>
+                <label for='postTitle'>Title : </label>
+                <input type="text" id='postTitle' name="title" onkeyup='validateTitle()'>
+                <span id='errTitle'></span>
+
+
+                <br>
+                <br>
+                <label for='postContent'>Content : </label>
+                <br>
+                <textarea id='postContent' name='content' cols="80" rows="5" onkeyup='validateContent()'></textarea>
+                <span id='errContent'></span>
+
+
+                <br>
+                <br>
+                <label for='postKeywords'>Keywords : </label>
+                <br>
+                <textarea id='postKeywords' name='keywords' cols="80" rows="5" onkeyup='validateKeywords()'></textarea>
+                <span id='errKeywords'></span>
+
+
+                <br>
+                <br>
+                <label for='picUrl'>Photo : </label>
+                <input type="url" name='pic' id='picUrl'>
+
+
+                <br>
+                <br>
+                <button id='postButton' onclick='addPost();renderPosts();return false;'>Post</button>
+                <button type="reset" id='resetButton'>Reset</button>
+
+
+            </form>
+
+
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>

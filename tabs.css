@@ -1,0 +1,26 @@
+#view {
+    background-color: #f5f5f5;
+
+}
+
+#post
+ {margin-top: 0;
+    display: none;
+    background-color: #f5f5f5;
+}
+
+.button1 {
+    font-size: 22px;
+    font-family: "SapientCentroSlab";
+    color: #000000;
+    border: 0;
+    outline: none;
+}
+
+.button1#viewTab {
+    background: #f5f5f5;
+}
+
+.button1#addTab {
+    background: #e0e0e0;
+}
