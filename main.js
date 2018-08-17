@@ -110,10 +110,11 @@ function renderPosts() {
                 var commentDiv = document.createElement('div');
                 commentDiv.id = `commentDiv${i}`;
                 elem.appendChild(commentDiv);
+                renderComments();
 
             }
         });
-
+         
 
     }
 
@@ -185,11 +186,12 @@ function onComment(id) {
             str += arr[i];
         }
         document.getElementById(`commentDiv${id}`).innerHTML = str;
+        renderComments();
 
     });
-    setTimeout(function () {
+  //  setTimeout(function () {
         renderComments();
-    }, 2500)
+  //  }, 2500)
    
 
 }
@@ -208,10 +210,11 @@ function renderComments() {
         for (var j=0;j<arr.length;j++) {
 
             document.getElementById(`commentDiv${j}`).innerHTML = '';
+           if (arr[j].comments!=null){
             var comArray=arr[j].comments;
             for (var i = 0; i < comArray.length; i++) {
                 str += comArray[i];
-            }
+            }}
             document.getElementById(`commentDiv${j}`).innerHTML = str;
             str='';
         }

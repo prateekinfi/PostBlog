@@ -10,19 +10,16 @@
 window.onload = function () {
     fillDate();
     renderPosts();
-    setTimeout(function () {
 
-        renderComments();
-    }, 2500)
 }
 
 function clickViewTab(id){
     //  alert(id);
        displaytabs(id);
        renderPosts();
-       setTimeout(function () {
-           renderComments();
-       }, 2500)
+    //    setTimeout(function () {
+    //        renderComments();
+    //    }, 2500)
    }
    
 
